@@ -24,3 +24,34 @@ CREATE TABLE IF NOT EXISTS `tilquin`.`trans` (
 ENGINE = InnoDB
 AUTO_INCREMENT = 3022
 DEFAULT CHARACTER SET = utf8mb3;
+
+--changeset jfs:2
+--04/05/2025 modify table trans to add InternalNo field
+USE tilquin;
+ALTER TABLE trans ADD COLUMN InternalNo INT(6) AFTER trans_id;
+
+--changeset jfs:3
+--04/05/2025 modify table trans change InternalNo to VARCHAR
+ALTER TABLE trans
+MODIFY COLUMN InternalNo VARCHAR(10); 
+
+--changeset jfs:4
+--04/14/2025 modify table trans, increase size of coloumn clear
+ALTER TABLE trans 
+MODIFY COLUMN clr VARCHAR(10);
+
+--changeset jfs:5
+--04/14/2025 modify table trans, change column clr from VARCHAR to TEXT to
+--increase dataset size
+ALTER TABLE trans 
+MODIFY COLUMN clr TEXT(10);
+
+--changeset jfs:6
+--04/14/2025 modify table trans, change column amount to alter decimal size
+ALTER TABLE trans 
+MODIFY COLUMN amount DECIMAL(10,2);
+
+--changeset jfs:7
+--04/14/2025 modify table trans, change column InternalNo to int
+ALTER TABLE trans 
+MODIFY COLUMN InternalNo INT;

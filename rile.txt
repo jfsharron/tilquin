@@ -1,0 +1,4 @@
+Connected to MySQL Server version  8.0.41-0ubuntu0.24.04.1
+You're connected to database:  ('tilquin',)
+Closing Database Connection . . .
+bye . . .
