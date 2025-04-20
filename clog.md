@@ -8,8 +8,10 @@
 
 
 
-<u>in progress</u>
+<u>04/20/2025 Commit a7a4b59</u>
 
 * added tilquin_accounts.py script to perform intial account import
 * added account and acct_type tables to database
 * add agruement to remove "nan" category, clr, tag, and notes
+
+<u>in progress</u>
