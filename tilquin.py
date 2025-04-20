@@ -47,6 +47,7 @@ from itertools import islice
 
 
 
+
 # ==============================================================================
 # intialize lists and variables
 # ============================================================================== 
@@ -182,12 +183,18 @@ def preProcess2():
         # ===================================
         if num == 'nan':
            num = " "
+        if description == 'nan':
+           description = " "
         if memo == 'nan':
            memo = " "
+        if category == 'nan':
+           category = " "
         if tag == 'nan':
            tag = " "
         if notes == 'nan':
            notes = " "
+        if clr == 'nan':
+           clr = " "
 
 
         # define query and data, execute query (write to database)

@@ -55,3 +55,55 @@ MODIFY COLUMN amount DECIMAL(10,2);
 --04/14/2025 modify table trans, change column InternalNo to int
 ALTER TABLE trans 
 MODIFY COLUMN InternalNo INT;
+
+--changeset jfs:8
+--04/19/2025 create account table
+CREATE TABLE IF NOT EXISTS `tilquin`.`account` (
+    `account_id` INT NOT NULL AUTO_INCREMENT,
+    `account_name` VARCHAR(100),
+    `account_no` VARCHAR(50),
+    `account_routing` VARCHAR(50),
+    `account_type` VARCHAR(50),
+    `asset_liability` TINYTEXT,
+    `account_balance` decimal(10,2),
+    `account_limit` decimal(10,2),
+    PRIMARY KEY (`account_id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 5022
+DEFAULT CHARACTER SET = utf8mb3;
+
+--changeset jfs:9
+--04/19/2025 create acct_type table
+CREATE TABLE IF NOT EXISTS `tilquin`.`acct_type` (
+    `acct_type_id` INT NOT NULL AUTO_INCREMENT,
+    `description` VARCHAR(100),
+    PRIMARY KEY (`acct_type_id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8mb3;
+
+--changeset jfs:10
+--04/19/2025 add intial values to acct_type table
+INSERT INTO acct_type (description) 
+VALUES ('checking')
+
+
+--changeset jfs:11
+--04/19/2025 add intial values to acct_type table
+INSERT INTO acct_type (description) 
+VALUES ('savings')
+
+--changeset jfs:12
+--04/19/2025 add intial values to acct_type table
+INSERT INTO acct_type (description) 
+VALUES ('credit_card')
+
+--changeset jfs:13
+--04/19/2025 add intial values to acct_type table
+INSERT INTO acct_type (description) 
+VALUES ('loan')
+
+--changeset jfs:14
+--04/19/2025 add intial values to acct_type table
+INSERT INTO acct_type (description) 
+VALUES ('asset')
